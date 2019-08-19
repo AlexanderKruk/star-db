@@ -7,12 +7,15 @@ import ErrorButton from '../error-button';
 import './item-details.css';
 
 const Record = ({selectedItem, label, field}) => {
-  return (
-    <li className="list-group-item">
-      <span className="term">{ label }</span>
-      <span>{ selectedItem[field] }</span>
-    </li>
-  );
+  if(selectedItem[field]) {
+    return (
+      <li className="list-group-item">
+        <span className="term">{ label }</span>
+        <span>{ selectedItem[field] }</span>
+      </li>
+    );
+  }
+  return null;
 };
 
 export {
@@ -59,13 +62,7 @@ export default class ItemDetails extends Component {
 
   render() {
 
-    const {selectedItem, loading} = this.state
-
-    if(!selectedItem) {
-      return (
-        <span>Select Item from list</span>
-      );
-    }
+    const { selectedItem, loading} = this.state
 
     const spinner = loading ? <Spinner /> : null;
     const content = !loading ? <ItemView selectedItem={this.state.selectedItem}

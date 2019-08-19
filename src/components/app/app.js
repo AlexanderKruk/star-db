@@ -18,8 +18,7 @@ import { PeoplePage,
          LoginPage,
          SecretPage } from '../pages';
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { StarshipDetails } from '../sw-components';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 export default class App extends Component {
 
@@ -63,28 +62,26 @@ export default class App extends Component {
 
               <RandomPlanet/>
               <Switch>
-                <Route path='/star-db' 
-                      render={() => <h2>Welcome to StarDB</h2>}
+              <Route path='/' 
+                      render={() => <Redirect to="/star-db/" />}
                       exact/>
-                <Route path='/planets'
+                <Route path='/star-db/' 
+                      render={() => <Redirect to="/people/1" />}
+                      exact/>
+                <Route path='star-db/planets'
                       render={() => <h2>Planets</h2>}
                       exact/>
-                <Route path='/people/:id?' component={PeoplePage}/>
-                <Route path='/planets' component={PlanetsPage}/>
-                <Route path='/starships' component={StarshipsPage} exact/>
-                <Route path='/starships/:id'
-                      render={({match}) => {
-                        const { id } = match.params
-                        return <StarshipDetails id={id}/>
-                      }}/>
-                <Route path='/login'
+                <Route path='/star-db/people/:id?' component={PeoplePage}/>
+                <Route path='/star-db/starships/:id?' component={StarshipsPage}/>
+                <Route path='/star-db/planets/:id?' component={PlanetsPage}/>
+                <Route path='/star-db/login'
                       render={() => {
                         return (
                           <LoginPage isLoggedIn={isLoggedIn}
                                     onLogin={this.onLogin}/>
                         );
                       }}/>
-                <Route path='/secret'
+                <Route path='/star-db/secret'
                       render={() => {
                           return (
                             <SecretPage isLoggedIn={isLoggedIn}/>

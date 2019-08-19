@@ -8,6 +8,7 @@
 .random-planet {
   display: flex;
   padding: 1rem;
+  margin: 0 1rem 2rem 1rem;
 }
 
 .random-planet .list-group {
@@ -20,5 +21,6 @@
 
 .random-planet .list-group-item .term {
   margin: .5rem;
+  color: orange;
 }
 
