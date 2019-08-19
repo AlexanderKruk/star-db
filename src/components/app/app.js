@@ -63,18 +63,15 @@ export default class App extends Component {
               <RandomPlanet/>
               <Switch>
               <Route path='/' 
-                      render={() => <Redirect to="/star-db/" />}
+                      render={() => <Redirect to="/star-db/people/1" />}
                       exact/>
                 <Route path='/star-db/' 
-                      render={() => <Redirect to="/people/1" />}
-                      exact/>
-                <Route path='star-db/planets'
-                      render={() => <h2>Planets</h2>}
+                      render={() => <Redirect to="/star-db/people/1" />}
                       exact/>
                 <Route path='/star-db/people/:id?' component={PeoplePage}/>
                 <Route path='/star-db/starships/:id?' component={StarshipsPage}/>
                 <Route path='/star-db/planets/:id?' component={PlanetsPage}/>
-                <Route path='/star-db/login'
+                {/* <Route path='/star-db/login'
                       render={() => {
                         return (
                           <LoginPage isLoggedIn={isLoggedIn}
@@ -86,7 +83,7 @@ export default class App extends Component {
                           return (
                             <SecretPage isLoggedIn={isLoggedIn}/>
                           );
-                      }}/>
+                      }}/> */}
                 <Route render = {() => <h2>Page not found</h2>}/>
               </Switch>
             </Router>
