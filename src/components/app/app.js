@@ -63,7 +63,7 @@ export default class App extends Component {
 
               <RandomPlanet/>
               <Switch>
-                <Route path='/' 
+                <Route path='/star-db' 
                       render={() => <h2>Welcome to StarDB</h2>}
                       exact/>
                 <Route path='/planets'

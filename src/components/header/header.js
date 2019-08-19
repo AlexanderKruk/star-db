@@ -7,7 +7,7 @@ const Header = ({onSeviceChange}) => {
   return (
     <div className="header d-flex">
       <h3>
-        <Link to="/">Star DB</Link>
+        <Link to="/star-db">Star DB</Link>
       </h3>
       <ul className="d-flex">
         <li>
