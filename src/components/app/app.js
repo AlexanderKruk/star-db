@@ -57,7 +57,7 @@ export default class App extends Component {
                       render={() => <Redirect to="/star-db/" />}
                       exact/>
                 <Route path='/star-db/' 
-                      render={() => <Redirect to="/people/1" />}
+                      render={() => <Redirect to="/people/3" />}
                       exact/>
                 <Route path='/people/:id?' component={PeoplePage}/>
                 <Route path='/starships/:id?' component={StarshipsPage}/>
