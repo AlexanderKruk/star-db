@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './row.css';
+import ErrorBoundry from '../error-boundry';
 
 
 const Row = ({ left, right }) => {
@@ -11,7 +12,9 @@ const Row = ({ left, right }) => {
         { left }
       </div>
       <div className="col-md-6">
+        <ErrorBoundry>
         { right }
+        </ErrorBoundry>
       </div>
     </div>
   )

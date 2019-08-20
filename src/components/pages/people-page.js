@@ -6,19 +6,14 @@ import { PersonList,
          PersonDetails,
         } from '../sw-components';
         
-import ErrorBoundry from '../error-boundry';
-
-
 const PeoplePage = ( { history, match }) => {
 
     const { id } = match.params;
 
     return (
-      <ErrorBoundry >
       <Row left={<PersonList onItemSelected={(id) => {history.push(id)}}/>}
           right={<PersonDetails id={id} />}
        />
-      </ErrorBoundry>
     );
   }
 
